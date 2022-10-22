@@ -13,19 +13,40 @@ export default function TextForm(props) {
         // console.log("On change");
         setText(event.target.value);
     }
-    const[text,setText] = useState("Enter text here...");
+    const convertlowCase=()=>{
+        let lowcase=text.toLowerCase();
+        setText(lowcase);
+
+    }
+    const cleartext=()=>{
+        let newText='';
+        setText(newText);
+    }
+    const[text,setText] = useState("");
   return (
+    <>
     <div>
         <h1>{props.heading}</h1>
-      <div className="mb-3">
+      {/* <div className="mb-3">
   <label for="exampleFormControlInput1" className="form-label">Email address</label>
   <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
-</div>
+</div> */}
 <div className="mb-3">
   <label for="exampleFormControlTextarea1" className="form-label">Example textarea</label>
   <textarea className="form-control" value={text} onChange={handleonchange} id="exampleFormControlTextarea1" rows="3"></textarea>
 </div>
-<button className='btnprimary' onClick={convertUpCase}>Convert to Uppercase</button>
+<button className='btn btn-primary' onClick={convertUpCase}>Convert to UpperCase</button><br></br><br></br>
+<button className='btn btn-primary' onClick={convertlowCase}>Convert to LowerCase</button><br></br><br></br>
+<button className='btn btn-primary' onClick={cleartext}>clearText</button>
     </div>
+    <div className='container'>
+        <h1>Your Text Summary</h1>
+        <p>{text.split(" ").length} words and {text.length} characters</p>
+    <p>{0.008*text.split(" ").length} minutes read </p>
+    <h2>Preview</h2>
+    <p>{text}</p>
+
+    </div>
+    </>
   )
 }
