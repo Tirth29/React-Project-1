@@ -12,7 +12,7 @@ function App() {
     <Navbar
      title="TextUtils1"
      aboutText="About textutils"/> 
-     <Navbar/>
+     {/* <Navbar/> */}
      <div className="container-main">
      <TextForm heading="Enter text to analyze"/>
      </div>

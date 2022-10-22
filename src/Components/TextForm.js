@@ -18,6 +18,11 @@ export default function TextForm(props) {
         setText(lowcase);
 
     }
+    const copy=()=>{
+        var text = document.getElementById("exampleFormControlTextarea1");
+        text.select();
+        navigator.clipboard.writeText(text.value)
+    }
     const cleartext=()=>{
         let newText='';
         setText(newText);
@@ -37,6 +42,7 @@ export default function TextForm(props) {
 </div>
 <button className='btn btn-primary' onClick={convertUpCase}>Convert to UpperCase</button><br></br><br></br>
 <button className='btn btn-primary' onClick={convertlowCase}>Convert to LowerCase</button><br></br><br></br>
+<button className='btn btn-primary' onClick={copy}>Copy Text</button><br></br><br></br>
 <button className='btn btn-primary' onClick={cleartext}>clearText</button>
     </div>
     <div className='container'>
