@@ -31,11 +31,11 @@ export default function TextForm(props) {
         let newText='';
         setText(newText);
     }
-    const[text,setText] = useState("");
+    const[text,setText] = useState('');
   return (
     <>
-    <div className='container' style={{color: props.mode==='dark'?'white':'#042743'}}>
-        <h1>{props.heading}</h1>
+    <div className="container" style={{color: props.mode==='dark'?'white':'#042743'}}>
+        <h1 style={{color: props.mode==='dark'?'white':'#042743'}}>{props.heading}</h1>
       {/* <div className="mb-3">
   <label for="exampleFormControlInput1" className="form-label">Email address</label>
   <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
