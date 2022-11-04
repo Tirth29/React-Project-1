@@ -7,6 +7,12 @@ import About from './Components/about';
 import React, {useState} from 'react'
 // import Alert from "./Components/alert";
 
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  // Link
+} from 'react-router-dom';
 
 function App() {
   const[mode,setMode]= useState('light');
@@ -34,6 +40,13 @@ function App() {
       document.body.style.backgroundColor='#042743';
       // showalert("Dark mode has been enabled","success");
       // document.title='TextUtils Dark Mode';
+      // setInterval(() => {
+      //     document.title = 'TextUtils is amazing'
+      // }, 2000);
+      // setInterval(() => {
+      //   document.title = 'Install TextUtils now !'; 
+      // }, 1500);
+
 
     }
     else
@@ -53,9 +66,17 @@ function App() {
      {/* <Navbar/> */}
      {/* <Alert alert={alert}/> */}
      <div className="container-main">
+      <Router>
+        <Routes>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path='/'>
      <TextForm heading="Enter text to analyze"/>
+          </Route>
+        </Routes>
+      </Router>
      </div>
-     <About/>
      
     </>
   );
