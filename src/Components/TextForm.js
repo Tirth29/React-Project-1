@@ -21,9 +21,12 @@ export default function TextForm(props) {
     setText(newText.join(" "));
   };
   const copy = () => {
+    console.log("I am Copy");
     var text = document.getElementById("exampleFormControlTextarea1");
     text.select();
     navigator.clipboard.writeText(text.value);
+    document.getSelection().removeAllRanges();
+    props.showAlert("Copied to clipboard !", "Success");
   };
   const cleartext = () => {
     let newText = "";
