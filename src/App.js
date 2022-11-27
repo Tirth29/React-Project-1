@@ -3,28 +3,28 @@ import "./App.css";
 import "./navbar";
 import Navbar from "./navbar";
 import TextForm from "./Components/TextForm";
-// import About from "./Components/about";
+import About from "./Components/about";
 import React, { useState } from "react";
-// import Alert from "./Components/alert";
+import Alert from "./Components/alert";
 
-// import {
-//   BrowserRouter as Router,
-//   Routes,
-//   Route,
-//   // Link
-// } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  // Link
+} from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState("light");
-  // const[alert,setAlert]= useState('');
-  // const showalert=(message,type)=>{
-  //   setAlert(
-  //     {
-  //       msg:message,
-  //       type:type
-  //     }
-  //   )
-  // }
+  const[alert,setAlert]= useState('');
+  const showalert=(message,type)=>{
+    setAlert(
+      {
+        msg:message,
+        type:type
+      }
+    )
+  }
   const toggleMode = () => {
     // if(mode==='dark')
     // {
@@ -37,7 +37,7 @@ function App() {
     if (mode === "light") {
       setMode("dark");
       document.body.style.backgroundColor = "#042743";
-      // showalert("Dark mode has been enabled","success");
+      showalert("Dark mode has been enabled","Success");
       // document.title='TextUtils Dark Mode';
       // setInterval(() => {
       //     document.title = 'TextUtils is amazing'
@@ -48,13 +48,13 @@ function App() {
     } else {
       setMode("light");
       document.body.style.backgroundColor = "white";
-      // showalert("Light mode has been enabled","success");
+      showalert("Light mode has been enabled","success");
       // Document.title='TextUtils Light Mode';
     }
   };
   return (
     <>
-      {/* <Router> */}
+      <Router>
         <Navbar
           title="TextUtils1"  
           mode={mode}
@@ -62,19 +62,19 @@ function App() {
           aboutText="About textutils"
         />
         {/* <Navbar/> */}
-        {/* <Alert alert={alert}/> */}
+        <Alert alert={alert} mode={mode}/>
         <div className="container-main">
-          {/* <Routes>
-            <Route path="/about" element={<About />} />
+          <Routes>
+            <Route path="/about" element={<About />} mode={mode}/>
             <Route
               path="/"
-              element={<TextForm heading="Enter text to analyze" mode={mode} />}
-            /> */}
-            <TextForm heading="Enter text to analyze" mode={mode}/>
-          {/* </Routes> */}
+              element={<TextForm heading="Try TextUtils Word & Character Counter, Remove space, Copy-text, Case Converter" mode={mode} />}
+            />
+            {/* <TextForm heading="Enter text to analyze" mode={mode}/> */}
+          </Routes>
           {/* <About/> */}
         </div>
-      {/* </Router> */}
+      </Router>
     </>
   );
 }
