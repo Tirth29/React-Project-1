@@ -61,22 +61,22 @@ export default function TextForm(props) {
             rows="3"
           ></textarea>
         </div>
-        <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={convertUpCase}>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={convertUpCase}>
           Convert to UpperCase
         </button>
 
-        <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={convertlowCase}>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={convertlowCase}>
           Convert to LowerCase
         </button>
 
-        <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={copy}>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={copy}>
           Copy Text
         </button>
 
-        <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={cleartext}>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={cleartext}>
           clearText
         </button>
-        <button disabled={text.length===0} className="btn btn-primary mx-1 my-1" onClick={removeextraspace}>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={removeextraspace}>
           {" "}
           Remove Extra Space
         </button>
