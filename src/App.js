@@ -5,7 +5,7 @@ import Navbar from "./navbar";
 import TextForm from "./Components/TextForm";
 import About from "./Components/about";
 import React, { useState } from "react";
-// import Alert from "./Components/alert";
+import Alert from "./Components/alert";
 
 import {
   BrowserRouter as Router,
@@ -19,23 +19,23 @@ import {
 
 function App() {
   const [mode, setMode] = useState("light");
-  // const[alert,setAlert]= useState('');
-  // const showalert=(message,type)=>{
-  //   setAlert(
-  //     {
-  //       msg:message,
-  //       type:type
-  //     }
-  //   )
-  // }
-const removeBodyClasses = ()=>
-{
-  document.body.classList.remove('bg-light');
-  document.body.classList.remove('bg-dark');
-  document.body.classList.remove('bg-danger');
-  document.body.classList.remove('bg-warning');
-  document.body.classList.remove('bg-success');
-}
+  const[alert,setAlert]= useState('');
+  const showalert=(message,type)=>{
+    setAlert(
+      {
+        msg:message,
+        type:type
+      }
+    )
+  }
+// const removeBodyClasses = ()=>
+// {
+//   document.body.classList.remove('bg-light');
+//   document.body.classList.remove('bg-dark');
+//   document.body.classList.remove('bg-danger');
+//   document.body.classList.remove('bg-warning');
+//   document.body.classList.remove('bg-success');
+// }
 
   const toggleMode = (cls) => {
     // if(mode==='dark')
@@ -46,13 +46,13 @@ const removeBodyClasses = ()=>
     // {
     //     setMode('dark');
     // }
-    removeBodyClasses();
-    console.log(cls);
-    document.body.classList.add('bg-'+cls);
+    // removeBodyClasses();
+    // console.log(cls);
+    // document.body.classList.add('bg-'+cls);
     if (mode === "light") {
       setMode("dark");
       document.body.style.backgroundColor = "#042743";
-      // showalert("Dark mode has been enabled","Success");
+      showalert("Dark mode has been enabled","Success");
       // document.title='TextUtils Dark Mode';
       // setInterval(() => {
       //     document.title = 'TextUtils is amazing'
@@ -63,7 +63,7 @@ const removeBodyClasses = ()=>
     } else {
       setMode("light");
       document.body.style.backgroundColor = "white";
-      // showalert("Light mode has been enabled","success");
+      showalert("Light mode has been enabled","success");
       // Document.title='TextUtils Light Mode';
     }
   };
@@ -77,7 +77,7 @@ const removeBodyClasses = ()=>
           aboutText="About textutils"
         />
         {/* <Navbar/> */}
-        {/* <Alert alert={alert} mode={mode}/> */}
+        <Alert alert={alert} mode={mode}/>
         <div className="container-main">
           <Routes>
             <Route path="/about" element={<About />} mode={mode}/>
