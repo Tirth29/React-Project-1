@@ -49,10 +49,12 @@ function App() {
     // removeBodyClasses();
     // console.log(cls);
     // document.body.classList.add('bg-'+cls);
+    
     if (mode === "light") {
       setMode("dark");
       document.body.style.backgroundColor = "#042743";
       showalert("Dark mode has been enabled","Success");
+
       // document.title='TextUtils Dark Mode';
       // setInterval(() => {
       //     document.title = 'TextUtils is amazing'
