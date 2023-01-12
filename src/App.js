@@ -75,7 +75,7 @@ function App() {
         <Navbar
           title="TextUtils1"  
           mode={mode}
-          toggleMode={toggleMode}
+          toggleMode={toggleMode}   
           aboutText="About textutils"
         />
         {/* <Navbar/> */}
